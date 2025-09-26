@@ -34,7 +34,7 @@ export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0);
   const[loading,setloading]=useState(false);
   const [skeleton,setSkeleton]=useState(true);
-  const searchParams = useSearchParams();
+  
   
 
 
