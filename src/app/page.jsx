@@ -17,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useSearchParams } from "next/navigation";
+
 
 
 
@@ -135,6 +135,26 @@ setloading(false);
     }
     router.push(route);
   };
+
+
+
+   if (!isSignedIn) {
+    return (
+      <div className="flex items-center relative justify-center min-h-[410px]">
+        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-md text-center">
+          <p className="text-lg font-semibold">
+            Please sign in to continue
+          </p>
+          <button
+            onClick={() => router.push("/sign-in")} 
+            className="bg-purple-600 hover:bg-purple-700 px-4 mt-4 cursor-pointer py-2 rounded text-white"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

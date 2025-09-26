@@ -242,11 +242,7 @@ export default function HeaderNav() {
             className={`w-3/4 sm:w-40 ${getButtonClass("/dashboard/view-expense")}`}
             onClick={() => handleClick("/dashboard/view-expense")}
           />
-          <ExpButton
-            text="Add Expense"
-            className="w-3/4 sm:w-40 bg-gray-500"
-            onClick={handleAddExpenseClick}
-          />
+        
           <ExpButton
             text="Budgets"
             className={`w-3/4 sm:w-40 ${getButtonClass("/dashboard/Income")}`}
