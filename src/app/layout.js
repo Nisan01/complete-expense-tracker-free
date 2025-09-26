@@ -1,15 +1,17 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {Noto_Sans} from "next/font/google";
 import "./globals.css";
+import HeaderNav from "@/components/HeaderNav/HeaderNav";
+import {ClerkProvider} from '@clerk/nextjs'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -18,12 +20,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+
+     <ClerkProvider>
+
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={`${notoSans.variable} ${notoSans.variable} antialiased`}
+     suppressHydrationWarning   >
+
+        
+<main className="min-h-screen  w-full bg-purple-800 relative overflow-hidden">
+  <div className="absolute bg-purple-300 rounded-full blur-[278.55px] w-full h-screen top-0"></div>
+<HeaderNav />
+
+
+       {children}
+   
+</main>
+
       </body>
     </html>
+    </ClerkProvider>
   );
 }
